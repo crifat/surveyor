@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= Rails.application.credentials.db_username %>
+  password:
+
+development:
+  <<: *default
+  database: surveyor_development
+
+test:
+  <<: *default
+  database: surveyor_test
+
+production:
+  <<: *default
+  database: surveyor_production
+  username: surveyor
+  password: <%= ENV['SURVEYOR_DATABASE_PASSWORD'] %>

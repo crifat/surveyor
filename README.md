@@ -1,24 +1,28 @@
-# README
+## Surveyor
+A project to demonstrate a survey management with admin panel and api. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requirements:
+* [docker](https://docs.docker.com/install/) 
+* [docker-compose](https://docs.docker.com/compose/install/) 
 
-Things you may want to cover:
+### Run Project
 
-* Ruby version
+1. `git clone git@github.com:nigh7m4r3/surveyor.git`
+2. `docker-compose build`
+2. `docker-compose up`
 
-* System dependencies
+#### URLs
+* Project Home: http://localhost:3000 
+* Admin Panel: http://localhost:3000/admin 
 
-* Configuration
+Admin Credential: 
 
-* Database creation
+email: `admin@example.com`
 
-* Database initialization
+password: `password`
 
-* How to run the test suite
+#### Test
+* run in terminal: `docker exec -ti surveyor bash -c "RAILS_ENV=test bundle exec rspec"`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Generate Api Doc
+* run in terminal: `docker exec -ti surveyor bash -c "RAILS_ENV=test bundle exec rake docs:generate"`.

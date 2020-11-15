@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: responses
+#
+#  id              :bigint           not null, primary key
+#  survey_id       :bigint
+#  responder_name  :string
+#  responder_email :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+one:
+  survey_id: 
+  responder_name: MyString
+  responder_email: MyString
+
+two:
+  survey_id: 
+  responder_name: MyString
+  responder_email: MyString

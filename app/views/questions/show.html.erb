@@ -1,0 +1,25 @@
+<div class="mt-4">
+  <h4><%= @question.question_text %></h4>
+  <h5>Your Answer</h5>
+  <%= form_tag survey_question_answers_path(@survey, @question) do %>
+    <% if @question.free_text? %>
+      <%= text_area_tag :answer_text %>
+    <% end %>
+    <% if @question.single_choice? %>
+      <% @answer_options.each do |option| %>
+        <%= radio_button_tag 'answer_option_ids[]', option.id %>
+        <%= label_tag "answer_option_ids__#{option.id}", option.option_text %>
+        <br>
+      <% end %>
+    <% end %>
+    <% if @question.multiple_choice? %>
+      <% @answer_options.each do |option| %>
+        <%= check_box_tag 'answer_option_ids[]', option.id %>
+        <%= label_tag "answer_option_ids__#{option.id}", option.option_text %>
+        <br>
+      <% end %>
+    <% end %>
+
+    <%= submit_tag 'Next', class: 'btn btn-primary mt-3' %>
+  <% end %>
+</div>

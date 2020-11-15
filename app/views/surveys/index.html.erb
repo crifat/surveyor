@@ -1,0 +1,5 @@
+<h1>Please Take Surveys!</h1>
+
+<% @surveys.each do |survey| %>
+  <%= link_to survey.name, survey_question_path(survey, survey.questions.first), class: 'btn btn-primary mt-3' %>
+<% end %>
